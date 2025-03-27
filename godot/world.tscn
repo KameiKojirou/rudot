@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8pu1uueetf07"]
+
+[ext_resource type="Script" uid="uid://lcjtxrlveu25" path="res://world.gd" id="1_f3sb7"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_f3sb7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Num1SpinBox" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Times" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "x"
+horizontal_alignment = 1
+
+[node name="Num2SpinBox" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Equals" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "="
+horizontal_alignment = 1
+
+[node name="LabelTotal" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Calc"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
