@@ -1,1 +1,1 @@
-A small Working example for calling top level Rust script from GDScript
+A small working example for calling top level Rust script from GDScript
