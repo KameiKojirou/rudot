@@ -5,33 +5,58 @@
 [node name="World" type="Node2D"]
 script = ExtResource("1_f3sb7")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 105.0
+offset_top = 236.0
+offset_right = 1022.0
+offset_bottom = 302.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Num1SpinBox" type="SpinBox" parent="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Times" type="Label" parent="HBoxContainer"]
+[node name="Num1SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Times" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "x"
 horizontal_alignment = 1
 
-[node name="Num2SpinBox" type="SpinBox" parent="HBoxContainer"]
+[node name="Num2SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Equals" type="Label" parent="HBoxContainer"]
+[node name="Equals" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "="
 horizontal_alignment = 1
 
-[node name="LabelTotal" type="Label" parent="HBoxContainer"]
+[node name="LabelTotal" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Calc"
 
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HelloLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HelloButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Say Hello!"
+
+[node name="HelloLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "name"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/HelloButton" to="." method="_on_hello_button_pressed"]

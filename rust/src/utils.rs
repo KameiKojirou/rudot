@@ -13,4 +13,9 @@ impl RustUtils {
     fn multiply(&self, a: i32, b: i32) -> i32 {
         a * b
     }
+
+    #[func]
+    fn hello(&self, name: String) -> String {
+        format!("Hello {}!", name)
+    }
 }
